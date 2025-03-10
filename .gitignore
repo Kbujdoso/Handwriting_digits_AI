@@ -1,5 +1,4 @@
 bin/*
 lib/*
 lib64/*
-
-./!main.py
+pyvenv.cfg
