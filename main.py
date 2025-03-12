@@ -6,3 +6,8 @@ class Network(object):
         self.biases = [np.random.randn(y, 1) for y in sizes[1:]]
         self.weights = [np.random.randn(x,y) 
                         for x,y in zip(sizes[:-1], sizes[1:])]
+
+net = Network([2,3,3])
+
+def sigmoid(z):
+    z = 1.0 / (1.0 + np.exp(-z))
