@@ -7,7 +7,8 @@ class Network(object):
         self.weights = [np.random.randn(x,y) 
                         for x,y in zip(sizes[:-1], sizes[1:])]
 
-net = Network([2,3,3])
 
 def sigmoid(z):
-    z = 1.0 / (1.0 + np.exp(-z))
+    return 1.0 / (1.0 + np.exp(-z))
+
+
