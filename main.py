@@ -32,9 +32,6 @@ class Network(object):
             else: 
                 print ("Epoch {0} complete".format(j))
 
-
-    def sigmoid(z):
-        return 1.0 / (1.0 + np.exp(-z))
 #nabla matematikai kifejezés a gradiánsra 
     def update_mini_batch(self, mini_batch, eta): 
         nabla_b = [np.zeros(b.shape) for b in self.biases]
@@ -51,4 +48,20 @@ class Network(object):
 
 #backprop
 
+def backprop(self, x, y): 
+    nabla_b = [np.zeros(b.shape) for b in self.biases]
+    nabla_w = [np.zeros(w.shape) for w in self.weights]
+    activation = x
+    activations = [x]
+    zs = []
+    for b, w in zip(self.biases, self.weights): 
+        z = np.dot(w, activation)+b
+        zs.append(z)
+        activation = sigmoid(z)
+        activations.append(activation)
+    delta = self.cost_derivative(activations[-1], y * sigmoid_prime(zs[-1]))
+    
 
+
+def sigmoid(z):
+    return 1.0 / (1.0 + np.exp(-z))
