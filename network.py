@@ -24,7 +24,7 @@ class Network(object):
             mini_batches = [
                 training_data[k:k + mini_batch_size]
                 for k in range(0, n, mini_batch_size)
-            ]  #felbontja a listát megfelelő angysárúra ebben az esetben az adat tömbünket
+            ]  #felbontja a listát megfelelő nagysárúra ebben az esetben az adat tömbünket
             for mini_batch in mini_batches: 
                 self.update_mini_batch(mini_batch, eta)
             if test_data: 
@@ -32,7 +32,7 @@ class Network(object):
             else: 
                 print ("Epoch {0} complete".format(j))
 
-#nabla matematikai kifejezés a gradiánsra 
+#gradians
     def update_mini_batch(self, mini_batch, eta): 
         nabla_b = [np.zeros(b.shape) for b in self.biases]
         nabla_w = [np.zeros(w.shape) for w in self.weights]

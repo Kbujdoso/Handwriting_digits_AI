@@ -3,4 +3,5 @@ lib/*
 lib64
 pyvenv.cfg
 .vscode
+mnis_loader.py
 
